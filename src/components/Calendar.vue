@@ -22,7 +22,9 @@ export default {
         num
       ).toDateString();
       const currentFullDate = new Date().toDateString();
-      return calendarFullDate === currentFullDate ? "border" : "";
+      return calendarFullDate === currentFullDate
+        ? "text-primary font-weight-bold"
+        : "";
     },
     prev() {
       if (this.currentMonth === 0) {
@@ -63,6 +65,12 @@ export default {
       <p class="weekday" v-for="day in days" :key="day">{{ day }}</p>
     </section>
     <section class="days">
+      <p
+        class="text-center"
+        style="width: 14.28%"
+        v-for="num in startDay()"
+        :key="num"
+      ></p>
       <p
         class="date-number"
         v-for="num in daysInMonth()"
