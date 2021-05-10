@@ -1,24 +1,25 @@
-# calendar
+# Calendar
 
-## Project setup
-```
-npm install
-```
+Here is a [Live Version](https://ceren-calendarvue.netlify.app/) 🚀
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+![sonsoncLND](https://user-images.githubusercontent.com/73752127/117710726-1c8eb200-b1db-11eb-85c0-d635be4d7c64.PNG)
 
-### Compiles and minifies for production
-```
-npm run build
-```
+## Technologies Used
 
-### Lints and fixes files
-```
-npm run lint
-```
+- JavaScript
+- Vue.js
+- Github
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+## How to Use
+
+Clone the repository:
+
+    $ git clone https://github.com/cerensolpan/calendar.git
+
+Install the packages
+
+    $ npm install
+
+Run the project:
+
+    $ npm run serve
