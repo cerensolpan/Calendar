@@ -57,52 +57,61 @@ export default {
 </script>
 
 <template>
-  <div
-    class="page d-flex justify-content-between align-items-center text-center"
-    style="background:#DDE1EC;"
-  >
-    <div class="left-container">
-      <section>
-        <img :src="timeSVG" class="time-svg mt-4" style="max-width:250px" />
-      </section>
+  <div class="page d-flex justify-content-center align-items-center">
+    <div
+      class="left-container d-flex justify-content-center align-items-center"
+    >
+      <div class="m-4">
+        <section>
+          <img :src="timeSVG" class="time-svg" style="max-width: 275px" />
+        </section>
+      </div>
     </div>
-    <div class="time mb-4" style="max-width:400px; min-width:350px; width:50%">
-      <h2 class="mt-3">Calendar</h2>
-      <section class="year d-flex justify-content-between p-2">
-        <h4>{{ currentMonthName }}</h4>
-        <h4>{{ currentYear }}</h4>
-      </section>
-      <section class="week d-flex flex-row text-center">
-        <p
-          class="weekday"
-          style="width: 14.28%"
-          v-for="(day, index) in days"
-          :key="index"
-        >
-          {{ day }}
-        </p>
-      </section>
-      <section class="days d-flex flex-row text-center flex-wrap">
-        <p
-          class="text-center"
-          style="width: 14.28%"
-          v-for="(start, index) in startDay()"
-          :key="-1 - index"
-        ></p>
-        <p
-          class="date-number"
-          style="width: 14.28%"
-          v-for="(num, index) in daysInMonth()"
-          :key="index"
-          :class="currentDateClass(num)"
-        >
-          {{ num }}
-        </p>
-      </section>
-      <section class="buttons d-flex justify-content-between">
-        <button @click="prev()">Prev</button>
-        <button @click="next()">Next</button>
-      </section>
+    <div
+      class="d-flex justify-content-center align-items-center"
+      style="width: 50%"
+    >
+      <div
+        class="time m-4 d-flex flex-column justify-content-center"
+        style="max-width: 400px; min-width: 350px"
+      >
+        <h2>Calendar</h2>
+        <section class="year d-flex justify-content-between p-2">
+          <h4>{{ currentMonthName }}</h4>
+          <h4>{{ currentYear }}</h4>
+        </section>
+        <section class="week d-flex flex-row text-center">
+          <p
+            class="weekday"
+            style="width: 14.28%"
+            v-for="(day, index) in days"
+            :key="index"
+          >
+            {{ day }}
+          </p>
+        </section>
+        <section class="days d-flex flex-row text-center flex-wrap">
+          <p
+            class="text-center"
+            style="width: 14.28%"
+            v-for="(start, index) in startDay()"
+            :key="-1 - index"
+          ></p>
+          <p
+            class="date-number"
+            style="width: 14.28%"
+            v-for="(num, index) in daysInMonth()"
+            :key="index"
+            :class="currentDateClass(num)"
+          >
+            {{ num }}
+          </p>
+        </section>
+        <section class="buttons d-flex justify-content-between">
+          <button @click="prev()">Prev</button>
+          <button @click="next()">Next</button>
+        </section>
+      </div>
     </div>
   </div>
 </template>
@@ -110,11 +119,13 @@ export default {
 <style>
 .page {
   flex-direction: row;
-  height: 100vh;
-  padding: 0px 75px 0px 75px;
+  min-height: 100vh;
 }
 .left-container {
   width: 50%;
+}
+.time {
+  font-size: 20px;
 }
 @media only screen and (max-width: 767px) {
   .page {
@@ -122,6 +133,9 @@ export default {
   }
   .left-container {
     width: 100%;
+  }
+  .time {
+    font-size: 14px;
   }
 }
 button {
