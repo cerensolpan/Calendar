@@ -73,7 +73,7 @@ export default {
     >
       <div
         class="time m-4 d-flex flex-column justify-content-center"
-        style="max-width: 400px; min-width: 350px"
+        style="max-width: 450px; min-width: 350px"
       >
         <h2>Calendar</h2>
         <section class="year d-flex justify-content-between p-2">
